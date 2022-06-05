@@ -2,8 +2,10 @@ from django.shortcuts import render, HttpResponse
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
-    # return HttpResponse("<b>This is HomePage<b>")
+    context = {
+        'variable': "TEST VARIABLE"
+    }
+    return render(request, 'index.html', context)
 
 def about(request):
     return HttpResponse("yhis is home page")

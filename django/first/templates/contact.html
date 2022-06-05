@@ -3,6 +3,33 @@
 {% block title %}Contact{% endblock title %}
 
 {% block body %}
-Contact page
+<div class="container">
+    <div class="mb-3">
+        Contact us
+    </div>
+    <form method="post" action="/contact">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" name="name">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+    
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Phone Number</label>
+          <input type="tel" class="form-control" name="phone">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Comment</label>
+            <textarea class="form-control" name="description"> </textarea>
+          </div>
+    
+        <button type="submit" class="btn btn-outline-primary">Submit</button>
+      </form>
+
+</div>
 {% endblock body %}
 
